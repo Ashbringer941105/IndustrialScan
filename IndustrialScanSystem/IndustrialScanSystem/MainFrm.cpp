@@ -17,6 +17,9 @@ IMPLEMENT_DYNCREATE(CMainFrame, CFrameWnd)
 
 BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_CREATE()
+	ON_COMMAND(ID_MENU_TOOL_SCAN, &CMainFrame::OnMenuToolScan)
+	ON_COMMAND(ID_MENU_TOOL_MANAGE, &CMainFrame::OnMenuToolManage)
+	ON_COMMAND(ID_MENU_TOOL_READIMAGE, &CMainFrame::OnMenuToolReadimage)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -93,3 +96,42 @@ void CMainFrame::Dump(CDumpContext& dc) const
 
 // CMainFrame 消息处理程序
 
+
+//点击菜单栏中的"工具"->"扫描"选项之后进行的处理函数
+//窗口中的控件还没有关联变量和更改ID，
+void CMainFrame::OnMenuToolScan()
+{
+	
+	// TODO:  在此添加命令处理程序代码
+	//AfxMessageBox(_T("点击了扫描按键"));
+	INT_PTR nScanRes;
+	CScanerAttributeDlg scanerAttributeDlg;
+	nScanRes = scanerAttributeDlg.DoModal();
+	if (nScanRes == IDOK)
+	{
+		//如果点击了扫描按键
+	}
+	if (nScanRes == IDCANCEL)
+	{
+		//如果点击了取消按键
+	}
+
+
+
+}
+
+
+//点击菜单栏中的"工具"->"管理"选项之后进行的处理函数
+void CMainFrame::OnMenuToolManage()
+{
+	// TODO:  在此添加命令处理程序代码
+
+	AfxMessageBox(_T("点击了管理按键"));
+}
+
+//点击菜单栏中的"工具"->"导入图片"选项之后进行的处理函数
+void CMainFrame::OnMenuToolReadimage()
+{
+	// TODO:  在此添加命令处理程序代码
+	AfxMessageBox(_T("点击了导入图片按键"));
+}

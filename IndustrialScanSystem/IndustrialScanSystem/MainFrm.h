@@ -4,6 +4,9 @@
 
 #pragma once
 
+#include "ScanerAttributeDlg.h"
+
+
 class CMainFrame : public CFrameWnd
 {
 	
@@ -38,6 +41,10 @@ protected:
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	DECLARE_MESSAGE_MAP()
 
+public:
+	afx_msg void OnMenuToolScan();
+	afx_msg void OnMenuToolManage();
+	afx_msg void OnMenuToolReadimage();
 };
 
 
